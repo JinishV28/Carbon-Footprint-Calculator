@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signin.css">
+    <title>Login - PRANA Carbon Footprint Calculator</title>
+</head>
+
+<body>
+    <section>
+        <form action="">
+            <h1>SIGN IN</h1>
+
+            <label for="name">
+                <input type="text" name="" id="name">
+                <span>NAME</span>
+            </label>
+
+            <label for="">
+                <input type="tel" name="" id="">
+                <span>PHONE NUMBER</span>
+            </label>
+
+            <label for="">
+                <input type="text" name="" id="">
+                <span>USER ID</span>
+            </label>
+
+            <label for="">
+                <input type="password" name="" id="">
+                <span>PASSWORD</span>
+            </label>
+
+            <div class="termofuse">
+                <input type="checkbox" name="" id="">
+                <span>
+                    By submitting this form i agree to
+                    <a href="#">terms of use</a>
+                </span>
+            </div>
+
+            <a href="#" class="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                SIGN UP
+            </a>
+
+            <p class="space-or">or</p>
+
+            <button type="button" id="signinButton" class="login-with-google-btn">
+                Sign in with Google
+            </button>
+
+        </form>
+    </section>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+    // Initialize auth2 variable
+    var auth2;
+
+    function start() {
+        gapi.load('auth2', function () {
+            auth2 = gapi.auth2.init({
+                client_id: '988264095120-jr0lhim5tatmoooav02cl28m7sncijjq.apps.googleusercontent.com',
+                // Scopes to request in addition to 'profile' and 'email'
+                // scope: 'additional_scope'
+            });
+        });
+    }
+
+    // Wait for the DOM to be ready before attaching click event listener
+    $(document).ready(function () {
+        // Call the start function to initialize auth2 when the DOM is ready
+        start();
+
+        // Attach click event listener to the signinButton
+        $('#signinButton').click(function () {
+            // Check if auth2 is initialized before attempting to use it
+            if (auth2) {
+                // Use auth2 after it has been initialized
+                auth2.grantOfflineAccess().then(signInCallback);
+            } else {
+                console.error("auth2 is not initialized yet.");
+            }
+        });
+    });
+
+    // signInCallback function should be defined separately
+    function signInCallback(authResult) {
+        // Handle sign-in result
+    }
+</script>
+
+</html>
