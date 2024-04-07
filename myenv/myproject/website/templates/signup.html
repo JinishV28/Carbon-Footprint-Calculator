@@ -12,6 +12,17 @@
     <section>
         <form action="">
             <h1>SIGN IN</h1>
+
+            <label for="name">
+                <input type="text" name="" id="name">
+                <span>NAME</span>
+            </label>
+
+            <label for="">
+                <input type="tel" name="" id="">
+                <span>PHONE NUMBER</span>
+            </label>
+
             <label for="">
                 <input type="text" name="" id="">
                 <span>USER ID</span>
@@ -25,17 +36,17 @@
             <div class="termofuse">
                 <input type="checkbox" name="" id="">
                 <span>
-                    If you don't have an account,
-                    <a href="./signup.html">let's create one</a>
+                    By submitting this form i agree to
+                    <a href="#">terms of use</a>
                 </span>
             </div>
 
-            <a onclick="signinFunction()" class="submit">
+            <a href="#" class="submit">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                SIGN IN
+                SIGN UP
             </a>
 
             <p class="space-or">or</p>
@@ -84,47 +95,6 @@
     // signInCallback function should be defined separately
     function signInCallback(authResult) {
         // Handle sign-in result
-    }
-
-    function signinFunction() {
-        var userId = document.getElementById("userId").value;
-        var password = document.getElementById("password").value;
-
-        // Prepare data to be sent
-        var formData = new FormData();
-        formData.append('userId', userId);
-        formData.append('password', password);
-
-        // Send data to Django view using AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/login/', true);  // Replace '/login/' with your Django view URL
-        xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));  // Include CSRF token
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                // Request was successful, handle response if needed
-                console.log(xhr.responseText);
-            } else {
-                // Request failed, handle error if needed
-                console.error('Request failed: ' + xhr.status);
-            }
-        };
-        xhr.send(formData);
-    }
-
-    // Function to get CSRF token
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
     }
 </script>
 
