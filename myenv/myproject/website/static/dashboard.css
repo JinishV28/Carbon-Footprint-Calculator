@@ -700,6 +700,29 @@ body::-webkit-scrollbar-thumb {
   border-radius: 40px;
 }
 
+
+
+input {
+  background:#333;
+  color:#fff;
+  border:solid 2px #ccc;
+  font-size:18px;
+}
+
+label, ul, li {
+  display:block;
+  margin-top:2rem;
+}
+
+output {
+  border:dashed 2px #000;
+  padding:.8rem;
+} */
+
+ul {
+  padding:0;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 1500px) {
@@ -727,7 +750,8 @@ body::-webkit-scrollbar-thumb {
 
   .content {
     left: 100px;
-    grid-template-columns: 70% 30%;
+    /* grid-template-columns: 70% 30%; */
+    grid-template-columns: 100%;
   }
 }
 

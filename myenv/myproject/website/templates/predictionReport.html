@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <title>PRANA Dashboard</title>
+</head>
+
+<body class="darkmode">
+    <nav class="main-menu">
+        <div>
+            <ul>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-user nav-icon"></i>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="./dashboard.html">
+                        <i class="fa fa-calculator nav-icon"></i>
+                        <span class="nav-text">CFP Calculation</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a href="#">
+                        <i class="fa fa-bar-chart nav-icon"></i>
+                        <span class="nav-text">Analytics</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fa fa-comments-o nav-icon"></i>
+                        <span class="nav-text">Feedback</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <ul>
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fa fa-sign-out nav-icon"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <div class="left-content" style="display: grid;">
+            <div class="search-and-check">
+                <form class="search-box">
+                    <input type="text" placeholder="Search event..." />
+                    <i class="bx bx-search"></i>
+                </form>
+            </div>
+            <div class="chart" style="width: 80%; justify-self: center;">
+                <canvas id="myChart" style="max-width: 700px;"></canvas>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="../frontend scripts/predictionReport.js"></script>
+
+</html>
