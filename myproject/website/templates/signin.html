@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signin.css">
+    <title>Login - PRANA Carbon Footprint Calculator</title>
+</head>
+
+<body>
+    <section>
+        <form action="">
+            <h1>SIGN IN</h1>
+            <label for="">
+                <input type="text" name="" id="">
+                <span>USER ID</span>
+            </label>
+
+            <label for="">
+                <input type="password" name="" id="">
+                <span>PASSWORD</span>
+            </label>
+
+            <div class="termofuse">
+                <input type="checkbox" name="" id="">
+                <span>
+                    If you don't have an account,
+                    <a href="./signup.html">let's create one</a>
+                </span>
+            </div>
+
+            <a href="{% url 'dashboard' %}" class="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                SIGN IN
+            </a>
+
+            <p class="space-or">or</p>
+
+            <button type="button" id="signinButton" class="login-with-google-btn">
+                Sign in with Google
+            </button>
+
+        </form>
+    </section>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+</html>
